@@ -1,0 +1,35 @@
+.contactList{
+    font-size: 20;
+    width: 500px;
+    margin-left: 0;
+    padding: 0;
+
+}
+
+.contactItem{
+    display: flex;
+    margin-left: 0;
+    padding: 5px;
+    margin-bottom: 10px;
+    
+}
+
+.contactText{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+
+.contactBtn{
+    display: block;
+    font-size: 15;
+    align-items: center;
+    border-radius: 3px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 15px;
+    height: 20px;
+    
+}
