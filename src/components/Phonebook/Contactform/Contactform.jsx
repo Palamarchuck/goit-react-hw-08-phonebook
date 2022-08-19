@@ -4,26 +4,34 @@ import styles from './Contactform.module.css';
 
 
 
-export default function ContactForm(onSubmit) {
+export default function ContactForm({onSubmit}) {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
    
-    const handleChange = event => {
-        const { name, value } = event.target;
+    // const handleChange = event => {
+    //     const { name, value } = event.target;
         
-        switch (name) {
-            case 'name':
-                setName(value);
-                break;
+    //     switch (name) {
+    //         case 'name':
+    //             setName(value);
+    //             break;
             
-            case 'number':
-                setNumber(value);
-                break;
+    //         case 'number':
+    //             setNumber(value);
+    //             break;
             
-            default:
-                return;
-        }
-    }
+    //         default:
+    //             return;
+    //     }
+    // }
+    const handleNameChange = e => {
+        setName(e.currentTarget.value);
+    };
+
+    const handleNumberChange = e => {
+        setNumber(e.currentTarget.value);
+    };
+
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -43,7 +51,7 @@ export default function ContactForm(onSubmit) {
                         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                         required
                         value={name}
-                        onChange={handleChange}
+                        onChange={handleNameChange}
                         className={styles.contactInput}
                             
                     />
@@ -56,7 +64,7 @@ export default function ContactForm(onSubmit) {
                         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         value={number}
-                        onChange={handleChange}
+                        onChange={handleNumberChange}
                         className={styles.contactInput}
                     />
 
