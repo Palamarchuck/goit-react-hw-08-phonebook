@@ -5,24 +5,17 @@ import ContactForm from "./Contactform/Contactform";
 import ContactList from "./Contactlist/Contactlist";
 import Filter from './Filter/Filter';
 import { nanoid } from 'nanoid';
+import useLocalStorage from './hooks/localStorage'
 // import styles from '../Phonebook/Phonebook.modules.css';
 
 
-const useLocalStorage = (key, defaultValue) => {
-        const [state, setState] = useState(() => {
-            return JSON.parse(window.localStorage.getItem(key)) ?? defaultValue;
-        });
-        useEffect(() => {
-            window.localStorage.setItem(key, JSON.stringify(state))
-        }, [key, state]);
-        return [state, setState];
-    }
+
 export default function Phonebook() {
-    const[contacts, setContacts] = useLocalStorage('contacts', [])
+    const [contacts, setContacts] = useLocalStorage('contacts', []);
     const [filter, setFilter] = useState('');
     
-     const addNewContact = ({ name, number }) => {
-        const isContact = contacts.find(contact => contact.name === name);
+    const addNewContact = ({ name, number }) => {
+    const isContact = contacts.find(contact => contact.name === name);
         if (isContact) {
             alert(`${name} is already in contact`);
             setContacts(contacts);
@@ -32,7 +25,7 @@ export default function Phonebook() {
                     id: nanoid(),
                     name,
                     number,
-                }, ...contacts]) 
+                }, ...contacts,]) 
          };
     };
 
@@ -71,7 +64,7 @@ export default function Phonebook() {
                 <ContactForm onSubmit={ addNewContact } />                               
                 <h2>Contacts</h2>
                 <Filter value={filter} onChange={changeFilter} />
-                <ContactList contacts={visibleContacts} onDeleteContact={deleteContact}/>
+                <ContactList contacts={visibleContacts()} onDeleteContact={deleteContact}/>
                 
             </div>
         )

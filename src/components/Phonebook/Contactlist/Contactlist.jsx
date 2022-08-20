@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Contactlist.module.css';
 
+
+
 const ContactList = ({ contacts, onDeleteContact }) => (
   <ul className={styles.contactList}>
     {contacts.map(({ name, number, id }) => (
@@ -26,3 +28,5 @@ ContactList.propTypes = {
 };
 
 export default ContactList;
+
+
