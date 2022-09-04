@@ -1,29 +1,15 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import styles from './Contactform.module.css';
 
 
 
 
-export default function ContactForm({onSubmit}) {
+
+export default function ContactForm({ onSubmit }) {
+       
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
    
-    // const handleChange = event => {
-    //     const { name, value } = event.target;
-        
-    //     switch (name) {
-    //         case 'name':
-    //             setName(value);
-    //             break;
-            
-    //         case 'number':
-    //             setNumber(value);
-    //             break;
-            
-    //         default:
-    //             return;
-    //     }
-    // }
     const handleNameChange = e => {
         setName(e.currentTarget.value);
     };

@@ -4,14 +4,14 @@ import styles from './Contactlist.module.css';
 
 
 
-const ContactList = ({ contacts, onDeleteContact }) => (
+const ContactList = ({ contacts, removeContact }) => (
   <ul className={styles.contactList}>
     {contacts.map(({ name, number, id }) => (
         <li key = {id} className={styles.contactItem}>
             <p className={styles.contactText}>
             {name}: {number}
             </p>
-            <button onClick={()=>onDeleteContact(id)} className={styles.contactBtn}>Delete</button>
+            <button onClick={()=>removeContact(id)} className={styles.contactBtn}>Delete</button>
         </li>
     ))}
   </ul>
