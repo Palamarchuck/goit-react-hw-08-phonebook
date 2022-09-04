@@ -7,13 +7,15 @@ import Filter from './Filter/Filter';
 // import { nanoid } from 'nanoid';
 // import useLocalStorage from './hooks/localStorage'
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact, removeContact } from "redux/actions";
+import { addContact, removeContact, setFilter } from "redux/actions";
+import { getFilterContacts, getFilter } from "redux/selectors";
 
 
 
 
 export default function Phonebook() {
-    const contacts = useSelector(store => store.contacts);
+    const contacts = useSelector(getFilterContacts);
+    const filter = useSelector(getFilter)
 
     const dispatch = useDispatch();
 
@@ -25,6 +27,10 @@ export default function Phonebook() {
     const onRemoveContact = (payload) => {
         dispatch(removeContact(payload));
     }
+
+    const onSetFilter = ({target}) => {
+        dispatch (setFilter(target.value))
+    }
     
         return (
             <div>
@@ -34,7 +40,7 @@ export default function Phonebook() {
                 <h2>Contacts</h2>
                 {/* <Filter value={filter} onChange={changeFilter} />
                 <ContactList contacts={visibleContacts()} onDeleteContact={deleteContact} /> */}
-                <Filter />
+                <Filter value={filter} onChange={onSetFilter} />
                 <ContactList contacts={contacts} removeContact={onRemoveContact} />
                 
             </div>
