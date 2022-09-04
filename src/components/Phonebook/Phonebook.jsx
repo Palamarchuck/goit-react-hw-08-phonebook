@@ -7,7 +7,7 @@ import Filter from './Filter/Filter';
 // import { nanoid } from 'nanoid';
 // import useLocalStorage from './hooks/localStorage'
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact, removeContact, setFilter } from "redux/actions";
+import { addContact, removeContact, setFilter } from "redux/contacts/contacts-actions";
 import { getFilterContacts, getFilter } from "redux/selectors";
 
 
