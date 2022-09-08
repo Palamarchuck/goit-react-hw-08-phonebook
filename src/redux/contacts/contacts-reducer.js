@@ -1,19 +1,11 @@
-import { ADD_CONTACT, REMOVE_CONTACT,} from "./contacts-types";
-;
-const initialStore = [];
+import { createReducer } from '@reduxjs/toolkit';
+import { addContact, removeContact } from './contacts-actions';
 
-const conactsReducer = (store = initialStore, {type, payload}) => {
-    
-    switch (type) {
-        case ADD_CONTACT:
-            return { ...store,  payload };
-        case REMOVE_CONTACT:
-            const newContacts = store.filter(({ id }) => id !== payload);
-            return { ...store, contacts: newContacts };
-        default:
-            return store;
-    }
-    
-}
+const conactsReducer = createReducer([], {
+    [addContact.type]: (store, {payload}) => {
+        store.push(payload)
+    },
+    [removeContact]: (store, {payload}) =>  store.filter(({ id }) => id !== payload)
+});
 
 export default conactsReducer;

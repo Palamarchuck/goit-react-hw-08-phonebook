@@ -1,14 +1,15 @@
 
 
-// import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+
 import ContactForm from "./Contactform/Contactform";
 import ContactList from "./Contactlist/Contactlist";
 import Filter from './Filter/Filter';
-// import { nanoid } from 'nanoid';
-// import useLocalStorage from './hooks/localStorage'
-import { useSelector, useDispatch } from 'react-redux';
-import { addContact, removeContact, setFilter } from "redux/contacts/contacts-actions";
-import { getFilterContacts, getFilter } from "redux/selectors";
+
+import { addContact, removeContact} from "redux/contacts/contacts-actions";
+import { setFilter } from 'redux/filter/filter-actions';
+import { getFilterContacts } from 'redux/filter/filter-selectors';
+import { getFilter } from 'redux/filter/filter-selectors';
 
 
 
