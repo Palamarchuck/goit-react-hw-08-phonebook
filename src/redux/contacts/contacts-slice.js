@@ -10,7 +10,7 @@ const contactsSlice = createSlice({
         // addContact: (store, { payload }) => {
         //     store.push(payload)
         // },
-        
+
         addContact: {
             reducer: (store, { payload }) => {
                 store.push(payload)
