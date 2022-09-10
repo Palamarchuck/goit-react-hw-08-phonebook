@@ -8,8 +8,8 @@ import Filter from './Filter/Filter';
 
 import { addContact, removeContact} from "redux/contacts/contacts-slice";
 import { setFilter } from 'redux/filter/filter-slice';
-import { getFilterContacts } from 'redux/filter/filter-selectors';
-import { getFilter } from 'redux/filter/filter-selectors';
+import { getFilterContacts } from 'redux/contacts/contacts-selectors'; 
+import { getFilter } from 'redux/filter/filter-selectors'; 
 
 
 
@@ -21,6 +21,11 @@ export default function Phonebook() {
     const dispatch = useDispatch();
 
     const onAddContact = (payload) => {
+        const isContact = contacts.find(item => item.name.toLowerCase() === payload.name.toLowerCase());
+        if (isContact) {
+            alert(`${payload.name} is already in contact`);
+            return
+        };
         const action = addContact(payload);
         dispatch(action);
     }
