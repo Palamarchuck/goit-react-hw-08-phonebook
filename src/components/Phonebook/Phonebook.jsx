@@ -25,11 +25,11 @@ export default function Phonebook() {
     
 
     const onAddContact = (payload) => {
-        const isContact = contacts.find(item => item.name.toLowerCase() === payload.name.toLowerCase());
-        if (isContact) {
-            alert(`${payload.name} is already in contact`);
-            return
-        };
+        // const isContact = contacts.find(item => item.name.toLowerCase() === payload.name.toLowerCase());
+        // if (isContact) {
+        //     alert(`${payload.name} is already in contact`);
+        //     return
+        // };
         dispatch(addContact(payload));
     }
 
