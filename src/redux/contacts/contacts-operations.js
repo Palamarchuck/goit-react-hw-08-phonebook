@@ -34,6 +34,7 @@ export const fetchContacts = createAsyncThunk(
 
 const isDublicate = ({ name, number }, contacts) => {
     const normalizedName = name.toLowerCase();
+
     const result = contacts.find(item => {
         return (normalizedName === item.name.toLowerCase() && number === item.number)
     });
@@ -41,15 +42,35 @@ const isDublicate = ({ name, number }, contacts) => {
 }
 
 export const addContact = createAsyncThunk(
-    "books/add",
-    async () => {
-        
+    "contacts/add",
+    async (data, {rejectWithValue}) => {
+        try {
+            const result = await api.addContact(data);
+            return result;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    },
+    {
+        condition: (data, { getState }) => {
+            const { contacts } = getState();
+            if (isDublicate(data, contacts.items)) {
+                alert(`${data.name} ${data.number} is alredy exist`);
+                return false;
+            }
+        }
     }
 )
 
 export const removeContact = createAsyncThunk(
-    "books/remove",
-    async () => {
+    "contacts/remove",
+    async (id, { rejectWithValue }) => {
+        try {
+            await api.removeContact(id);
+            return id;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
         
     }
 )
