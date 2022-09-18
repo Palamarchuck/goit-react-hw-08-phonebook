@@ -1,19 +1,17 @@
 import React from 'react';
-import Phonebook from './Phonebook/Phonebook'
+// import Phonebook from './Phonebook/Phonebook';
+import Navbar from './Navbar/Navbar';
+import UserRoutes from 'UserRoutes';
+
+
+
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: '#010101'
-        
-      }}
-    >
-    <Phonebook/>
+    <div>
+    <Navbar />
+    <UserRoutes />
+    {/* <Phonebook/> */}
     </div>
   );
 };
