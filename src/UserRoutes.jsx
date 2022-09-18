@@ -5,12 +5,6 @@ const RegisterPage = lazy(() => import('./components/RegisterPage/RegisterPage')
 const LoginPage = lazy(() => import('./components/LoginPage/LoginPage'));
 const Phonebook = lazy(() => import('./components/Phonebook/Phonebook'));
 
-
-// const MovieDetails = lazy(() => import ('Pages/MovieDetails/MovieDetails'));
-// const NotFoundPage = lazy(() => import('./Pages/NotFoundPage/NotFoundPage'));
-// const CastPage = lazy(() => import('Pages/CastPage/CastPage'));
-// const ReviewsPage = lazy(() => import('./Pages/ReviewsPage/ReviewsPage'));
-
 const UserRoutes = () => {
     return (
         <Suspense fallback ={<p>....Load page</p>}>
