@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Contactlist.module.css';
+import Button from 'react-bootstrap/Button';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 
 
 const ContactList = ({ contacts, removeContact }) => (
-  <ul className={styles.contactList}>
+  <ListGroup className={styles.contactList}>
     {contacts.map(({ name, number, id }) => (
-        <li key = {id} className={styles.contactItem}>
+        <ListGroup.Item key = {id} className={styles.contactItem}>
             <p className={styles.contactText}>
             {name}: {number}
             </p>
-            <button onClick={()=>removeContact(id)} className={styles.contactBtn}>Delete</button>
-        </li>
+            <Button onClick={()=>removeContact(id)} className={styles.contactBtn}>Delete</Button>
+        </ListGroup.Item>
     ))}
-  </ul>
+  </ListGroup>
 );
 
 ContactList.propTypes = {

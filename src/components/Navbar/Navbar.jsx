@@ -12,7 +12,9 @@ const Navbar = () => {
 
     return (
         <div className={styles.wrapper}>
-            <Link className={styles.logo} to="/">Logo</Link>
+            <Link className={styles.logo} to="/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjzGhEt55tZ_fF0EGn363MSuKz81aZrqL_fdbsEkwNXw&s" height={100} alt="Phonebook" />
+            </Link>
             {isLogin && <NavbarMenu />}
             {isLogin ? <UserMenu /> : <NavbarAuth />}
         </div>

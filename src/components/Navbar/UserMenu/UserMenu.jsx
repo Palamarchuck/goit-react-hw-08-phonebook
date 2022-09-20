@@ -4,6 +4,10 @@ import { logout } from "redux/auth/auth-operations";
 
 import { getUser } from "redux/auth/auth-selectors";
 
+import Button from 'react-bootstrap/Button';
+
+import Badge from 'react-bootstrap/Badge';
+
 const UserMenu = () => {
     const { email } = useSelector(getUser);
     const dispatch = useDispatch();
@@ -12,8 +16,8 @@ const UserMenu = () => {
 
     return (
         <div>
-            <span>{email}</span> | 
-            <button onClick={onLogout} type="button">Logout</button>
+            <Badge bg="light" text="dark"><span>{email}</span> </Badge>
+            <Button onClick={onLogout} type="button">Logout</Button>
         </div>
     )
 }

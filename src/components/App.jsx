@@ -5,6 +5,7 @@ import Navbar from './Navbar/Navbar';
 import UserRoutes from 'UserRoutes';
 
 import { current } from "../redux/auth/auth-operations"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export const App = () => {

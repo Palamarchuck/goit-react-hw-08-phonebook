@@ -1,4 +1,4 @@
-
+import styles from '../Phonebook/phonebook.module.css'
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -42,7 +42,7 @@ export default function Phonebook() {
     }
     
         return (
-            <div>
+            <div className={styles.container}>
                 <h1>Phonebook</h1>
                 {/* <ContactForm onSubmit={addNewContact} />  */}
                 <ContactForm onSubmit={onAddContact}/> 

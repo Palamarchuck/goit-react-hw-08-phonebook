@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./navbar-menu.module.css"
+import Nav from 'react-bootstrap/Nav';
 
 const getClassName = ({ isActive }) => {
     const className = isActive ? `${styles.link} ${styles.active}` : styles.link;
@@ -9,12 +10,14 @@ const getClassName = ({ isActive }) => {
 const NavbarMenu = () => {
     return (
         <ul className={styles.menu}>
-                <li > 
-                    <NavLink className={getClassName} to="/contacts">Contacts</NavLink>
+            <li > 
+                <Nav>
+                    <Nav.Link>
+                        <NavLink className={getClassName} to="/contacts">Contacts</NavLink>
+                    </Nav.Link>
+                </Nav>
+                    
                 </li>
-                {/* <li> 
-                    <NavLink className={getClassName} to="/movies">Movies</NavLink>
-                </li> */}
         </ul>
     )
 }

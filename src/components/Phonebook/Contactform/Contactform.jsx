@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import styles from './Contactform.module.css';
-
-
-
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 
 export default function ContactForm({ onSubmit }) {
@@ -27,10 +26,10 @@ export default function ContactForm({ onSubmit }) {
     };
 
         return (
-            <form onSubmit={handleSubmit} className={styles.contactForm}>
-                <label className={styles.contactLabel}>
+            <Form onSubmit={handleSubmit} className={styles.contactForm}>
+                <Form.Label className={styles.contactLabel}>
                     Name
-                    <input
+                    <Form.Control
                         type="text"
                         name="name"
                         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -41,9 +40,9 @@ export default function ContactForm({ onSubmit }) {
                         className={styles.contactInput}
                             
                     />
-                </label>
-                <label className={styles.contactLabel}>Number
-                    <input
+                </Form.Label>
+                <Form.Label className={styles.contactLabel}>Number
+                    <Form.Control
                         type="tel"
                         name="number"
                         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -54,10 +53,10 @@ export default function ContactForm({ onSubmit }) {
                         className={styles.contactInput}
                     />
 
-                </label>
-                <button type="submit" className={styles.contactBtn}>Add contact</button>
+                </Form.Label>
+                <Button type="submit" className={styles.contactBtn}>Add contact</Button>
 
-            </form>
+            </Form>
 
         )
     

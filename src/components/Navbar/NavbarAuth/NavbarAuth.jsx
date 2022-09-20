@@ -1,13 +1,23 @@
 import { NavLink } from "react-router-dom";
 import styles from "./navbar-auth.module.css";
+import Nav from 'react-bootstrap/Nav';
 
 const NavbarAuth = () => {
     return (
-        <div className={styles.wrapper}>
-            <NavLink to="/register" className={styles.link}>Register</NavLink>
-            |
-            <NavLink to="/login" className={styles.link}>login</NavLink>
-        </div>
+        <Nav className="justify-content-end">
+            <Nav.Link>
+                <NavLink to="/register" className={styles.link}>Register</NavLink> 
+            </Nav.Link>
+            <Nav.Link>
+                <NavLink to="/login" className={styles.link}>login</NavLink>
+            </Nav.Link>
+           
+            
+                
+            
+            
+            
+        </Nav>
     )
 }
 
