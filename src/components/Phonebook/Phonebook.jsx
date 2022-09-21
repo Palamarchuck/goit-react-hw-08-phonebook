@@ -1,4 +1,5 @@
-import styles from '../Phonebook/phonebook.module.css'
+// import styles from '../Phonebook/phonebook.module.css'
+import styles from "./phonebook.module.css"
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
