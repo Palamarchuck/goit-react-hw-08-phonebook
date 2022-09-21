@@ -25,11 +25,7 @@ export default function Phonebook() {
     
 
     const onAddContact = (payload) => {
-        // const isContact = contacts.find(item => item.name.toLowerCase() === payload.name.toLowerCase());
-        // if (isContact) {
-        //     alert(`${payload.name} is already in contact`);
-        //     return
-        // };
+
         dispatch(addContact(payload));
     }
 
@@ -44,11 +40,9 @@ export default function Phonebook() {
         return (
             <div className={styles.container}>
                 <h1>Phonebook</h1>
-                {/* <ContactForm onSubmit={addNewContact} />  */}
+              
                 <ContactForm onSubmit={onAddContact}/> 
                 <h2>Contacts</h2>
-                {/* <Filter value={filter} onChange={changeFilter} />
-                <ContactList contacts={visibleContacts()} onDeleteContact={deleteContact} /> */}
                 <Filter value={filter} onChange={onSetFilter} />
                 <ContactList contacts={contacts} removeContact={onRemoveContact} />
                 
