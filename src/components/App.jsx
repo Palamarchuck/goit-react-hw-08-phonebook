@@ -19,7 +19,6 @@ export const App = () => {
     <div>
     <Navbar />
     <UserRoutes />
-    {/* <Phonebook/> */}
     </div>
   );
 };
